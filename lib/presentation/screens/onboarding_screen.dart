@@ -40,7 +40,7 @@ class OnboardingScreen extends StatelessWidget {
           //   begin: Alignment.topLeft,
           //   end: Alignment.bottomRight,
           // ),
-          color: Colors.white
+          color: Colors.white,
         ),
         child: Column(
           children: [
@@ -92,9 +92,10 @@ class OnboardingScreen extends StatelessWidget {
                   width: onboardingProvider.currentPage == index ? 12 : 8,
                   height: onboardingProvider.currentPage == index ? 12 : 8,
                   decoration: BoxDecoration(
-                    color: onboardingProvider.currentPage == index
-                        ? Colors.white
-                        : Colors.white54,
+                    color:
+                        onboardingProvider.currentPage == index
+                            ? const Color.fromARGB(255, 175, 172, 172)
+                            : const Color.fromARGB(137, 184, 182, 182),
                     shape: BoxShape.circle,
                   ),
                   duration: const Duration(milliseconds: 300),
@@ -104,7 +105,7 @@ class OnboardingScreen extends StatelessWidget {
             const SizedBox(height: 20),
             if (onboardingProvider.currentPage == _onboardingData.length - 1)
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.all(30.0),
                 child: TextButton(
                   onPressed: () => _goToLogin(context),
                   style: TextButton.styleFrom(
@@ -112,6 +113,10 @@ class OnboardingScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
+                      side: const BorderSide(
+                        color: Color(0xFF9C27B0), // Border color
+                        width: 2.0, // Border width
+                      ),
                     ),
                   ),
                   child: const Text(
